@@ -53,9 +53,13 @@ def project_():
                   '_id': 0}
     return projection
 
-def list_city(city):
-    list_cities=[j for i in city for j in i]
-    return list_cities
+def figure_city(filt_list):
+    city=[i['offices'] for i in filt_list]
+    list_cities=[j for i in city for j in i] 
+    list_cities = list_city(city)
+    df_top10_city= df_city(list_cities)
+    return df_top10_city
+
 
 def df_city(list_cities):
     df= pd.DataFrame(list_cities)
