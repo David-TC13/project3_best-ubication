@@ -92,17 +92,29 @@ def basketball(token):
     basketball = response_6.json()#airport in within 10km
     return basketball
 
-def dict_(json_response):
-    try:
-        proc_dict={
-        'name':json_response['results'][0]['name'],
-        'lat': json_response['results'][0]['geocodes']['main']['latitude'],
-        'lon': json_response['results'][0]['geocodes']['main']['longitude'],
-        'distance (m)': json_response['results'][0]['distance']
-        }
-        return proc_dict
-    except:
-        return f'This place is not in within our criteria'
+def def_zg(starbucks,bus_stop,parking,airport,school,restaurant,basketball):
+    def dict_(json_response):
+        try:
+            proc_dict={
+            'name':json_response['results'][0]['name'],
+            'lat': json_response['results'][0]['geocodes']['main']['latitude'],
+            'lon': json_response['results'][0]['geocodes']['main']['longitude'],
+            'distance (m)': json_response['results'][0]['distance']
+            }
+            return proc_dict
+        except:
+            return f'This place is not in within our criteria'
+    star_b = dict_(starbucks)
+    b_stop = dict_(bus_stop)
+    air_p  = dict_(airport)
+    schl   = dict_(school)
+    prk    = dict_(parking)
+    rst    = dict_(restaurant)
+    bsk    = dict_(basketball)
+    list_conditions= [star_b, b_stop,air_p,schl,prk,rst,bsk]
+    df_zg= list_places_nearby(list_conditions)
+    return df_zg
+
 def list_places_nearby(list_conditions):
     try:
         df=pd.DataFrame(list_conditions)

@@ -7,40 +7,31 @@ import plotly.express as px
 from plotly import graph_objects as go
 import matplotlib.pyplot as plt
 
-def regex_name ():
+def regex():
     companies_name = {'name':
                             {"$regex": 
                             '^(|ux|ui|frontend|backend|gaming|game|gamer|web|software)',
                             "$options" :'i'}}
-    return companies_name
-
-def regex_category():
     companies_cat = {'category_code':
                             {"$regex": 
                             '(network|ux|ui|frontend|backend|gaming|games|game|social|gamer|web|develop|software)',
                             "$options" :'i'}}
-    return companies_cat
-
-def regex_tags():
     companies_tag = {'tag_list':
                             {"$regex": 
                             '(network|design|ux|ui|frontend|backend|gaming|game|gamer|social|web|software)',
                             "$options" :'i'}}
-    return companies_tag
-
-def regex_description():
     companies_desc = {'description':
                              {"$regex": 
                             '(network|ux|ui|frontend|backend|gaming|games|game|social|gamer|web|develop|software)',
                             "$options" :'i'}}
-    return companies_desc
-
-def regex_overview():
     companies_overview ={'overview':
                             {"$regex": 
                             '(network|ux|ui|frontend|backend|gaming|games|game|social|gamer|web|develop|software)',
                             "$options" :'i'}}
-    return companies_overview
+    filter_ = {
+            "$or": [companies_name, companies_cat, companies_tag, companies_desc, companies_overview]
+            }    
+    return filter_
 
 def project_():
     projection = {'name': 1,
@@ -55,13 +46,7 @@ def project_():
 
 def figure_city(filt_list):
     city=[i['offices'] for i in filt_list]
-    list_cities=[j for i in city for j in i] 
-    list_cities = list_city(city)
-    df_top10_city= df_city(list_cities)
-    return df_top10_city
-
-
-def df_city(list_cities):
+    list_cities=[j for i in city for j in i]
     df= pd.DataFrame(list_cities)
     df['count'] = df.groupby('city')['city'].transform('count')
     df.sort_values(by=['count'], ascending = False, inplace= True)
@@ -73,8 +58,9 @@ def df_city(list_cities):
     df.drop(2, inplace=True)
     df.reset_index(inplace= True)
     df.drop('index',axis =1, inplace =True)
-    df_top10_city = df.iloc[:10]
+    df_top10_city = df.iloc[:10] 
     return df_top10_city
+
 
 def fig_city(df_top10_city):
     fig_city = px.bar(df_top10_city, x="city", y="count", color='country',
@@ -87,15 +73,9 @@ def company_df(filt_list):
     raised_company=[i ['total_money_raised']for i in filt_list]
     dict_name= {'name':name_company, 'amount': raised_company}
     df_name= pd.DataFrame (dict_name)
-    return df_name
-
-def clean_currency(df_name):
     df_name['amount'] = df_name['amount'].apply(lambda x : x.replace('M',''))
     df_name[['currency', 'amount']] = df_name['amount'].str.extract(r'(\D*)(\d.*)')
     df_name.currency.unique()
-    return df_name
-
-def dollar_company(df_name):
     df_name = df_name.astype({'amount': 'float'})
     df_name['us$_value_per_M'] = np.where(df_name['currency'] == '€',df_name['amount'] * 1.06864,
                                     (np.where(df_name['currency'] == 'C$',

@@ -42,7 +42,14 @@ def palo_alto_address():
     address = list(comp.find({ "$and": 
                 [companies_name,{'$or':
                                  [companies_city,companies_city_1]}]},project_ ))
-    return address
+    address_lst= []
+    for i in address:
+        for key, value in i.items():
+            for j in value:
+                address_lst.append(j)
+    df_address= pd.DataFrame(address_lst)
+    df_address=df_address.apply(lambda x: x[df_address['city'].isin(['Palo Alto', 'San Francisco'])])
+    return df_address
 
 def d_address(address):
     address_lst= []
