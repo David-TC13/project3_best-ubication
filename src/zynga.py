@@ -1,9 +1,5 @@
 import requests
-import json
-import os
 import pandas as pd
-from getpass import getpass
-from dotenv import load_dotenv
 
 def st_b_zn(token):
     url = "https://api.foursquare.com/v3/places/search?query=starbucks&ll=37.764760,-122.406779&radius=500&limit=5"

@@ -1,4 +1,4 @@
-# Project: where to point our gaming company?
+# Project: where to point our gaming company
 
   This project has been developed with the intention to accomodate as many as possible requirements as possible according with the professionals there are in the company. For this reason, and trying to give a priority to these requirements, the first thing done was to check which "weight" has every kind of professional; according to this our main priorities were retrieved from the designers and the account managers as seen below
 ![group_professionals](/pics/group_prof.jpg)

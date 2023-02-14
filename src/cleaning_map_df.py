@@ -1,20 +1,8 @@
-from pymongo import MongoClient
 import pandas as pd
-import seaborn as sns
-import numpy as np
-import re
-import plotly.express as px
-from plotly import graph_objects as go
-import matplotlib.pyplot as plt
-import requests
-import geopandas as gpd
 from cartoframes.viz import Map, Layer, popup_element
 import folium
 from folium import Choropleth, Circle, Marker, Icon, Map
 from folium.plugins import HeatMap, MarkerCluster
-import json
-import os
-from dotenv import load_dotenv
 
 def data_together( df_coordinates, df_zg):
     zg_coord = df_coordinates.drop([0,1,2])
@@ -34,11 +22,11 @@ def points(df_all):
         ubication = {"location": [row["lat"], row["lon"]]}
         if row["name"] == 'Zynga':        
             icon = Icon (
-                color="white",
+                color="red",
                 opacity = 0.6,
                 prefix = "fa",
                 icon="briefcase",
-                icon_color = "black"
+                icon_color = "white"
             )
         elif row["name"] == 'Starbucks':        
             icon = Icon (
@@ -50,7 +38,7 @@ def points(df_all):
             )
         elif row["name"] == 'De Haro & Mariposa':        
             icon = Icon (
-                color="red",
+                color="white",
                 opacity = 0.6,
                 prefix = "fa",
                 icon="bus",

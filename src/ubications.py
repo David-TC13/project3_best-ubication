@@ -1,14 +1,7 @@
 from pymongo import MongoClient
 import pandas as pd
-import numpy as np
-import re
-import requests
-import geopandas as gpd
 from cartoframes.viz import Map, Layer, popup_element
-import folium
 from folium import Choropleth, Circle, Marker, Icon, Map
-from folium.plugins import HeatMap, MarkerCluster
-
 def palo_alto_full_address():
     client = MongoClient("localhost:27017")
     db = client["Ironhack"]
