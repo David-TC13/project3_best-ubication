@@ -41,3 +41,5 @@ and their ubication
   
   As we can see below, the position has the facilities required by staff; the only two requirements were mentioned during the plan but have been not considered are the party placements and dog hairdressers; the first one was discarded as being in the city center, will not be really difficult to find places to go party and, also, there might be different preferences of kind of leisure activities which could not fit with just partying; on the other side, the dog's requirements were also not considered as, if there's nothing found around, as part of the company, everyone of the staff should care about him, so, we could take turns for washing it.  
   ![distances](/pics/distances.png)
+  ![map](/pics/map.png)
+  
