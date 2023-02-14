@@ -1,6 +1,6 @@
 # Project: where to point our gaming company
 
-  This project has been developed with the intention to accomodate as many as possible requirements as possible according with the professionals there are in the company. For this reason, and trying to give a priority to these requirements, the first thing done was to check which "weight" has every kind of professional; according to this our main priorities were retrieved from the designers and the account managers as seen below
+  This project has been developed with the intention to accomodate as many as possible requirements as possible according with the professionals there are in the company. For this reason, and trying to give a priority to these requirements, the first thing done was to check which "weight" has every kind of professional; according to this our main priorities were retrieved from the designers and the account managers as seen below.
 ![group_professionals](/pics/group_prof.jpg)
 
 ## Filtering companies
@@ -9,7 +9,7 @@
 ![top_ten_co](/pics/city_comp.png)
 
   On the other hand, also was filtered those companies which they produced more than US$1M; for that, we also checked the currency how the companies declared their income and applied the exchange rate getting, on one side the amount of companies which they declare their incomes, which is the 95% in US$,followed by a 3% in €.
-- Income of companies by rates
+- Income Currency:
 ![currency](/pics/co_income.png)
 - Table with the list of companies by currency
 ![incom_currency_company](/pics/comp_incom_currency.png)
@@ -18,7 +18,7 @@ Finally, we got the top ten companies via income:
 
 ![top_ten_company](/pics/top_ten_co.png)
 
-and their ubication
+and their ubication:
 ![top_ten_ubication](/pics/top_ten_city.png)
 
   Matching both results we can find that the best opportunity should be around San Francisco or Palo Alto, even getting into consideration the distance to Silicon Valley.
