@@ -5,7 +5,7 @@
 
 ## Filtering companies
 
-  Following this, we create our queries throughout MongoDB about companies which could be an example in terms of ubication and conditions, filtering, first of all, via using Regex to get the companies with terms like "tech", "gaming", "software"... adn grouping them by cities, giving the result of the top ten cities world-wide,as below:
+  Following this, we create our queries throughout MongoDB about companies which could be an example in terms of ubication and conditions, filtering, first of all, via using Regex to get the companies with terms like "tech", "gaming", "software"... and grouping them by cities, giving the result of the top ten cities world-wide,as below:
 ![top_ten_co](/pics/city_comp.png)
 
   On the other hand, also was filtered those companies which they produced more than US$1M; for that, we also checked the currency how the companies declared their income and applied the exchange rate getting, on one side the amount of companies which they declare their incomes, which is the 95% in US$,followed by a 3% in €.
