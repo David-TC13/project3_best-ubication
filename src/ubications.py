@@ -2,23 +2,6 @@ from pymongo import MongoClient
 import pandas as pd
 from cartoframes.viz import Map, Layer, popup_element
 from folium import Choropleth, Circle, Marker, Icon, Map
-def palo_alto_full_address():
-    client = MongoClient("localhost:27017")
-    db = client["Ironhack"]
-    comp = db.get_collection("companies")
-    companies_name   = {'name':
-                            {"$regex": 
-                            '(SurveyMonkey|LivingSocial|Zynga|BrightSource|Better Place|Tesla Motors|SolarCity|Telefonica|Comcast|SunEdison)',
-                            "$options" :'i'}}
-    companies_city   = {'offices.city':'Palo Alto'}
-    companies_city_1 = {'offices.city':'San Francisco'}                
-
-    project_= {'offices.address1':1,'offices.city':1,'_id':0}
-    project_1= {'name':1,'offices.address1':1,'offices.city':1,'_id':0}
-    address_with_name = list(comp.find({ "$and": [companies_name,{'$or':[companies_city,companies_city_1]}]},project_1))
-
-    return address_with_name
-
 def palo_alto_address():
     client = MongoClient("localhost:27017")
     db = client["Ironhack"]
