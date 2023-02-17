@@ -3,7 +3,6 @@ import numpy as np
 import plotly.express as px
 from plotly import graph_objects as go
 import matplotlib.pyplot as plt
-
 def regex():
     companies_name = {'name':
                             {"$regex": 
