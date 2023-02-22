@@ -22,7 +22,7 @@ def bs_st_zn(lat,lon,token):
     }
 
     response_1 = requests.get(url, headers=headers)
-    bus_stop = response_1.json() #bustop in within 1000m
+    bus_stop = response_1.json() 
     return bus_stop
 
 def park(lat,lon,token):
@@ -48,7 +48,7 @@ def airport(lat,lon,token):
 
 
     response_2 = requests.get(url, headers=headers)
-    airport = response_2.json()#airport in within 50km
+    airport = response_2.json()
     return airport
 
 def schools(lat,lon,token):
@@ -60,7 +60,7 @@ def schools(lat,lon,token):
     }
 
     response_3 = requests.get(url, headers=headers)
-    school = response_3.json()#school in within 5000m
+    school = response_3.json()
     return school
 
 def restaurant(lat,lon,token):
@@ -72,7 +72,7 @@ def restaurant(lat,lon,token):
     }
 
     response_5 = requests.get(url, headers=headers)
-    restaurant = response_5.json()#airport in within 500m
+    restaurant = response_5.json()
     return restaurant
 
 def basketball(lat,lon,token):
@@ -84,7 +84,7 @@ def basketball(lat,lon,token):
     }
 
     response_6 = requests.get(url, headers=headers)
-    basketball = response_6.json()#airport in within 10km
+    basketball = response_6.json()
     return basketball
 
 def def_zn(starbucks,bus_stop,parking,airport,school,restaurant,basketball):
